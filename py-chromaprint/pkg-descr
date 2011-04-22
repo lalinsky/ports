@@ -1,0 +1,4 @@
+chromaprint is the basic part of an open music fingerprinting
+stack Acoustid. This provides Python bindings for the library.
+
+WWW: http://wiki.acoustid.org/wiki/Chromaprint
