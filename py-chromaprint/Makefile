@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	chromaprint
-PORTVERSION=	0.2.${REVNO}
+#PORTVERSION=	0.2.${REVNO}
+PORTVERSION=	0.3
 CATEGORIES=	devel python
-MASTER_SITES=	CENKES
-REVNO=		67
+MASTER_SITES=	http://cloud.github.com/downloads/lalinsky/chromaprint/
+#REVNO=		67
 
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,7 +19,7 @@ COMMENT=	Python bindings for chromaprint
 
 LIB_DEPENDS=	chromaprint.0:${PORTSDIR}/audio/chromaprint
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
