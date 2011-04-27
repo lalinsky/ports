@@ -17,8 +17,7 @@ COMMENT=	A chroma-based acoustic fingerprinter
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		tag:${PORTSDIR}/audio/taglib \
-		boost_filesystem:${PORTSDIR}/devel/boost-libs \
-		samplerate:${PORTSDIR}/audio/libsamplerate
+		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	LGPL21
 
