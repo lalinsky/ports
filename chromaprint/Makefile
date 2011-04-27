@@ -20,6 +20,8 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs \
 		samplerate:${PORTSDIR}/audio/libsamplerate
 
+LICENSE=	LGPL21
+
 #googletest
 
 #USE_BZIP2=	yes

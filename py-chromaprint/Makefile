@@ -12,6 +12,8 @@ CATEGORIES=	devel python
 MASTER_SITES=	http://cloud.github.com/downloads/lalinsky/chromaprint/
 #REVNO=		67
 
+LICENSE=	MIT
+
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lalinsky@gmail.com
@@ -24,6 +26,6 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/python
-PYDISTUTILS_EGGINFO=    Chromaprint-0.3-py${PYTHON_VER}.egg-info
+PYDISTUTILS_EGGINFO=    Chromaprint-${PORTVERSION}-py${PYTHON_VER}.egg-info
 
 .include <bsd.port.mk>
