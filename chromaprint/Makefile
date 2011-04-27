@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	chromaprint
-PORTVERSION=	0.2.${REVNO}
+#PORTVERSION=	0.2.${REVNO}
+PORTVERSION=	0.3
 CATEGORIES=	audio
-MASTER_SITES=	CENKES
-REVNO=		67
+MASTER_SITES=	http://cloud.github.com/downloads/lalinsky/chromaprint/
+#REVNO=		67
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A chroma-based acoustic fingerprinter
@@ -21,7 +22,7 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 
 #googletest
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-Wno-dev -DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
@@ -30,7 +31,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_VERBOSE=	yes
 
 PLIST_FILES=	bin/chroma-fpgen bin/chroma-fpcollect bin/chroma-fpsubmit \
-		lib/libchromaprint.so.0.1.0 lib/libchromaprint.so.0 \
+		lib/libchromaprint.so.0.1.1 lib/libchromaprint.so.0 \
 		lib/libchromaprint.so include/chromaprint.h \
 		libdata/pkgconfig/libchromaprint.pc
 
