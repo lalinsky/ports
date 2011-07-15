@@ -1,0 +1,6 @@
+solrpy is a Python client for Solr, an enterprise search server
+built on top of Lucene. solrpy allows you to add documents to
+a Solr instance, and then to perform queries and gather search
+results from Solr using Python.
+
+WWW: http://code.google.com/p/solrpy/
