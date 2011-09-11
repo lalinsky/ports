@@ -6,24 +6,23 @@
 #
 
 PORTNAME=	chromaprint
-#PORTVERSION=	0.2.${REVNO}
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	audio
-MASTER_SITES=	http://cloud.github.com/downloads/lalinsky/chromaprint/
-#REVNO=		67
+MASTER_SITES=	https://github.com/lalinsky/${PORTNAME}/tarball/${COMMIT}/
 
 MAINTAINER=	infofarmer@FreeBSD.org
 COMMENT=	A chroma-based acoustic fingerprinter
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		tag:${PORTSDIR}/audio/taglib \
+		gtest:${PORTSDIR}/devel/googletest/ \
 		boost_filesystem:${PORTSDIR}/devel/boost-libs
 
 LICENSE=	LGPL21
 
-#googletest
-
-#USE_BZIP2=	yes
+FETCH_ARGS=	-Fpr
+COMMIT=	2f54fe8
+WRKSRC=	${WRKDIR}/lalinsky-${PORTNAME}-${COMMIT}
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
 CMAKE_ARGS=	-Wno-dev -DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
@@ -31,8 +30,8 @@ CMAKE_ARGS=	-Wno-dev -DCMAKE_EXE_LINKER_FLAGS:STRING="-L${LOCALBASE}/lib" \
 CFLAGS+=	-I${LOCALBASE}/include
 CMAKE_VERBOSE=	yes
 
-PLIST_FILES=	bin/chroma-fpgen bin/chroma-fpcollect bin/chroma-fpsubmit \
-		lib/libchromaprint.so.0.1.1 lib/libchromaprint.so.0 \
+PLIST_FILES=	bin/chroma-fpcollect bin/chroma-fpsubmit \
+		lib/libchromaprint.so.0.1.2 lib/libchromaprint.so.0 \
 		lib/libchromaprint.so include/chromaprint.h \
 		libdata/pkgconfig/libchromaprint.pc
 
@@ -41,13 +40,9 @@ post-patch:
 		${WRKSRC}/CMakeLists.txt
 
 post-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/tools/fpgen ${PREFIX}/bin/chroma-fpgen
 	@${INSTALL_PROGRAM} ${WRKSRC}/tools/fpcollect \
 		${PREFIX}/bin/chroma-fpcollect
 	@${INSTALL_SCRIPT} ${WRKSRC}/tools/fpsubmit.py \
 		${PREFIX}/bin/chroma-fpsubmit
-
-dist:
-	@bzr export -r ${REVNO} ${DISTFILES} lp:chromaprint
 
 .include <bsd.port.mk>
