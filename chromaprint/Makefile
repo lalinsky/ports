@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chromaprint
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/lalinsky/${PORTNAME}/tarball/${COMMIT}/
 
@@ -21,7 +21,7 @@ LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 LICENSE=	LGPL21
 
 FETCH_ARGS=	-Fpr
-COMMIT=	2f54fe8
+COMMIT=	f2c45fb
 WRKSRC=	${WRKDIR}/lalinsky-${PORTNAME}-${COMMIT}
 USE_LDCONFIG=	yes
 USE_CMAKE=	yes
